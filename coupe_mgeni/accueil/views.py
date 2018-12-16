@@ -1,13 +1,16 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-
+from .models import Accueil,Section
 """
     request: mettre la requete envoyee
     path du template : ne pas oublier de rajouter dans le DIR de settings.py
     arguments en dictionnaire
 """
 def home(request):
-    return render(request, 'accueil/accueil.html', {})
+
+    accueil = Accueil.objects.all()[0]
+    sections = Section.objects.all()
+    return render(request, 'accueil/accueil.html', {'accueil':accueil, 'sections':sections})
 
 def view_article(request, id_article):
     """

@@ -17,7 +17,7 @@
 
 
 <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Tournoi</h2>
+    <h2 class="mdl-card__title-text">{{accueil.titre}}</h2>
 </div>
 <div class="mdl-card__media">
     {% load static %}
@@ -25,23 +25,17 @@
 </div>
 
 <div class="mdl-grid portfolio-copy">
-    <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Introduction</h3>
-    <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding ">
-        <p>
-            Tournoi de foot U14 et U16...
-        </p>
-    </div>
 
 
+  {% for section in sections %}
 
-
-    <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Organisation</h3>
-
-    <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding ">
-        <p>
-            Le tournoi se fera en mars...
-        </p>
-    </div>
+  <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">{{section.nom}}</h3>
+  <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding ">
+      <p>
+          {{section.texte}}
+      </p>
+  </div>
+  {% endfor %}
 
     <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Inscription</h3>
 

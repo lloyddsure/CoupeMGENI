@@ -1,4 +1,4 @@
 venv/
 *.pyc
-*migrations/*
+*migrations/
 *__pycache__/
