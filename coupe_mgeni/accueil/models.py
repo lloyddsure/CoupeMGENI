@@ -5,7 +5,7 @@ from django.utils import timezone
 
 class Section(models.Model):
     nom = models.CharField(max_length=100)
-    position = models.IntegerField()
+    position = models.IntegerField(primary_key=True)
     texte = models.TextField()
 
 
