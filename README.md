@@ -17,3 +17,11 @@ python3 manage.py makemigrations
 python3 manage.py migrate
 python3 manage.py runserver
 ```
+
+# Pour le déploiement :
+
+Avec Apache2
+
+```bash
+aptitude install libapache2-mod-wsgi
+```
