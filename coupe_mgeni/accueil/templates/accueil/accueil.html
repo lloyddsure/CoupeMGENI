@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}Ma page d'accueil{% endblock %}
+
+{% block nav %}
+<a class="mdl-navigation__link is-active" href="/">Accueil</a>
+<a class="mdl-navigation__link" href="/blog">Blog</a>
+<a class="mdl-navigation__link" href="/inscription">Inscription</a>
+<a class="mdl-navigation__link" href="/contact">Contact</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="mdl-grid portfolio-max-width">
+
+<div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+
+
+
+<div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Tournoi</h2>
+</div>
+<div class="mdl-card__media">
+    {% load static %}
+    <img class="article-image" src="{% static "accueil/images/carousel.jpg" %}" border="0" alt="">
+</div>
+
+<div class="mdl-grid portfolio-copy">
+    <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Introduction</h3>
+    <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding ">
+        <p>
+            Tournoi de foot U14 et U16...
+        </p>
+    </div>
+
+
+
+
+    <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Organisation</h3>
+
+    <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding ">
+        <p>
+            Le tournoi se fera en mars...
+        </p>
+    </div>
+
+    <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Inscription</h3>
+
+    <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding ">
+        <p>
+          <a href="/inscription" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">Inscription</a>
+        </p>
+    </div>
+</div>
+
+
+</div>
+
+
+</div>
+{% endblock %}

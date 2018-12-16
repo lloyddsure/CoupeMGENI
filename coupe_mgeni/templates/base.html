@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Coupe MGENI</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-blue.min.css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    
+    <title>{% block title %}Coupe MGENI{% endblock %}</title>
+  </head>
+
+
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
+            <div class="mdl-layout__header-row portfolio-logo-row">
+                <span class="mdl-layout__title">
+                    <div class="portfolio-logo"></div>
+                    <span class="mdl-layout__title">Coupe MGENI</span>
+                </span>
+            </div>
+            <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
+                <nav class="mdl-navigation mdl-typography--body-2-force-preferred-font">
+                    {% block nav %}
+                    <a class="mdl-navigation__link is-active" href="/">Accueil</a>
+                    <a class="mdl-navigation__link">Inscription</a>
+                    <a class="mdl-navigation__link" href="/contact">Contact</a>
+                    {% endblock %}
+                </nav>
+            </div>
+        </header>
+
+
+        <main class="mdl-layout__content">
+
+            <section id="content">
+                {% block content %}{% endblock %}
+            </section>
+
+            <footer class="mdl-mini-footer">
+                <div class="mdl-mini-footer__left-section">
+                    <div class="mdl-logo">Simple Website du Tournoi</div>
+                </div>
+                <div class="mdl-mini-footer__right-section">
+                    <ul class="mdl-mini-footer__link-list">
+                        <li><a href="#">Aide</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </main>
+
+    </div>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+
+
+  </body>
+
+
+
+
+</html>
