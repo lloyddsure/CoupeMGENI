@@ -25,7 +25,7 @@ SECRET_KEY = 'fpw9xpw61li1n-_%2v4pawu4@sbp()smh6=@mh=p&z(7n*z!&e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','coupemgeni.com']
+ALLOWED_HOSTS = ['localhost','coupemgeni.com','*']
 
 
 # Application definition
