@@ -3,8 +3,8 @@
 
 {% block nav %}
 <a class="mdl-navigation__link" href="/">Accueil</a>
-<a class="mdl-navigation__link is-active" href="/blog">Blog</a>
 <a class="mdl-navigation__link" href="/inscription">Inscription</a>
+<a class="mdl-navigation__link is-active" href="/blog">Blog</a>
 <a class="mdl-navigation__link" href="/contact">Contact</a>
 {% endblock %}
 
@@ -27,7 +27,6 @@
         <div class="mdl-card__supporting-text no-left-padding">
             <p>{{ article.contenu|truncatewords_html:80 }}</p>
             <p><a href="{% url 'lire' article.id %}">Lire la suite</a></p>
-            <span>Category: <a href="#">Latest</a></span>
         </div>
     </div>
 </div>

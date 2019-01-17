@@ -3,8 +3,8 @@
 
 {% block nav %}
 <a class="mdl-navigation__link" href="/">Accueil</a>
-<a class="mdl-navigation__link" href="/blog">Blog</a>
 <a class="mdl-navigation__link is-active">Inscription</a>
+<a class="mdl-navigation__link" href="/blog">Blog</a>
 <a class="mdl-navigation__link" href="/contact">Contact</a>
 {% endblock %}
 
@@ -21,22 +21,19 @@
     <h2 class="mdl-card__title-text">Inscription</h2>
 </div>
 
-{% if envoi %}Votre message a bien été envoyé !{% endif %}
+{% if envoi %}
+Inscription faite !
+{% endif %}
 
+{% if not envoi %}
 <form action="{% url "Inscription" %}" method="post">
     {% csrf_token %}
 
-    {% for field in form %}
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      {{ field }}
-      <label class="mdl-textfield__label" for="{{ field.name }}">{{ field.label }}</label>
-    </div>
-    {% endfor %}
-
-    <p>
-      <input class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" value="S'inscrire" />
-    </p>
+    {{ form.as_p }}
+    <input type="submit" value="S'inscrire" />
 </form>
+{% endif %}
+
 
 </div>
 
