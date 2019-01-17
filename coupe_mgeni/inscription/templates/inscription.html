@@ -30,7 +30,9 @@ Inscription faite !
     {% csrf_token %}
 
     {{ form.as_p }}
-    <input type="submit" value="S'inscrire" />
+    <p>
+      <input class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" type="submit" value="S'inscrire" />
+    </p>
 </form>
 {% endif %}
 

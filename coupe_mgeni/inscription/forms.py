@@ -9,7 +9,7 @@ class InscriptionForm(forms.ModelForm):
         model = Equipe
         fields = '__all__'
         widgets = {
-            'nomEquipe': forms.TextInput(attrs={'class': 'mdl-textfield__input'}),
+            'nomEquipe': forms.TextInput(attrs={'class': 'mdl-textfield__input', 'size':'80'}),
             'categorie': forms.Select(attrs={'class': 'mdl-textfield__input'}),
             'nomContact': forms.TextInput(attrs={'class': 'mdl-textfield__input'}),
             'prenomContact': forms.TextInput(attrs={'class': 'mdl-textfield__input'}),
@@ -18,11 +18,11 @@ class InscriptionForm(forms.ModelForm):
         }
 
     def clean_nomEquipe(self):
-        nomEquipe = self.cleaned_data['nomContact']
+        nomEquipe = self.cleaned_data['nomEquipe']
         if not re.match("^[0-9A-z\s\-\.]*$", nomEquipe):
             raise forms.ValidationError("Pas de caractère spéciaux, svp !")
 
-        return nomContact  # Ne pas oublier de renvoyer le contenu du champ traité
+        return nomEquipe  # Ne pas oublier de renvoyer le contenu du champ traité
 
     def clean_nomContact(self):
         nomContact = self.cleaned_data['nomContact']
@@ -36,7 +36,7 @@ class InscriptionForm(forms.ModelForm):
         if not re.match("^[A-z\s\-\.]*$", prenomContact):
             raise forms.ValidationError("Prénom invalide !")
 
-        return nomContact  # Ne pas oublier de renvoyer le contenu du champ traité
+        return prenomContact  # Ne pas oublier de renvoyer le contenu du champ traité
 
     def clean_emailContact(self):
         emailContact = self.cleaned_data['emailContact']
