@@ -30,3 +30,7 @@ def  inscription(request):
     else:
         form = InscriptionForm(initial={})
         return render(request, 'inscription.html', locals())
+
+
+def envoi_de_mail(request):
+    print(request)
