@@ -5,6 +5,7 @@ from django.core import serializers
 from django.http import HttpResponse
 
 from .models import Categorie, Equipe
+from .views import envoi_de_mail
 
 def exporter_tableau(modeladmin, request, queryset):
 

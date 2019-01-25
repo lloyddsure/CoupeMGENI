@@ -52,7 +52,6 @@ class InscriptionForm(forms.ModelForm):
 
         return telephoneContact  # Ne pas oublier de renvoyer le contenu du champ traité
 
-
 """
 class InscriptionForm(forms.Form):
     equipe = forms.CharField(max_length=100, label="Nom de l'équipe")
@@ -68,4 +67,9 @@ class InscriptionForm(forms.Form):
             raise forms.ValidationError("Il n'y a pas de @")
 
         return message
+
+
+class MailMassif(forms.Form):
+    sujet = forms.CharField(max_length=100, label="Sujet")
+    message = forms.CharField(max_length=3000, label="Message")
 """

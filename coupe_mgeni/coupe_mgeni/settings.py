@@ -137,3 +137,10 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+
+EMAIL_HOST = 'smtp.ionos.com'
+EMAIL_HOST_PASSWORD = 'Mgeni4coupe'
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'info@coupemgeni.com'
+EMAIL_PORT = 587

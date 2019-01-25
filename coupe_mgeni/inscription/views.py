@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from .forms import InscriptionForm
+from .logic import confirmerInscription
+
 
 # Create your views here.
 
@@ -24,7 +26,8 @@ def  inscription(request):
             # Ici nous pouvons traiter les données du formulaire
             envoi = True
             form.save()
-
+            confirmerInscription(form)
+            #utils.mail.envoi_de_mail()
         # Quoiqu'il arrive, on affiche la page du formulaire.
         return render(request, 'inscription.html', locals())
     else:
