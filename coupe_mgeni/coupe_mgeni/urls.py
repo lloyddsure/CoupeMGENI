@@ -10,14 +10,12 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('', Accueil.home),
-    path(r'admin/', admin.site.urls),
-    path(r'accueil/', include('accueil.urls')),
-    path(r'contact/', include('contact.urls')),
-    path(r'inscription/', include('inscription.urls')),
-    path(r'blog/', include('blog.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-#+ static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    url(r'^admin', admin.site.urls),
+    url(r'^accueil', include('accueil.urls')),
+    path(r'contact', include('contact.urls')),
+    path(r'inscription', include('inscription.urls')),
+    path(r'blog', include('blog.urls')),
+] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 #urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 #if settings.DEBUG:
