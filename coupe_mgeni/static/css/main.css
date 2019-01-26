@@ -2,8 +2,8 @@
 
 .portfolio-header {
   position: relative;
-  background-color: #F5F5DC;
-  background: url("../images/banniere.jpg");
+  background-color: black;/*#F5F5DC;
+  /*background: url("../images/banniere.jpg");*/
   background-repeat: no-repeat;
   background-size: auto;
 }
@@ -64,6 +64,7 @@
       -ms-flex: 1;
           flex: 1;
   line-height: 42px;
+  color:#FFFFFF;
 }
 
 .portfolio-header .mdl-layout__drawer-button {
@@ -162,7 +163,8 @@ section {
 
 
 body {
-  background: url("../images/CFV-VIfoot.png");
+  /*background: url("../images/CFV-VIfoot.png");*/
+  background-color: white;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
