@@ -1,19 +1,21 @@
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url
+from django.conf.urls.i18n import i18n_patterns
 from accueil import views as Accueil
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', Accueil.home),
-    path('accueil/', include('accueil.urls')),
-    path('contact/', include('contact.urls')),
-    path('inscription/', include('inscription.urls')),
-    path('blog/', include('blog.urls')),
-]
-
+    path(r'admin/', admin.site.urls),
+    path(r'accueil/', include('accueil.urls')),
+    path(r'contact/', include('contact.urls')),
+    path(r'inscription/', include('inscription.urls')),
+    path(r'blog/', include('blog.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 #+ static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
