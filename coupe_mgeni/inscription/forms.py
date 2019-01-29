@@ -5,8 +5,11 @@ from .models import Equipe
 
 class InscriptionForm(forms.ModelForm):
 
+    estConscientDePayer = forms.BooleanField(label="Vous êtes prêt à payer la somme de 180$ (par chèque) pour inscrire l'équipe")
+
     class Meta:
         model = Equipe
+        exclude = ('aPayer',)
         fields = '__all__'
         widgets = {
             'nomEquipe': forms.TextInput(attrs={'class': 'mdl-textfield__input', 'size':'80'}),
@@ -51,6 +54,12 @@ class InscriptionForm(forms.ModelForm):
             raise forms.ValidationError("Numéro de téléphone invalide !")
 
         return telephoneContact  # Ne pas oublier de renvoyer le contenu du champ traité
+
+    def clean_estConscientDePayerestConscientDePayer(self):
+        estConscientDePayer = self.cleaned_data['estConscientDePayer']
+        if not estConscientDePayer:
+            raise forms.ValidationError("Vous ne pouvez vous inscrire sans que vous soyez conscient de payer l'inscription")
+        return estConscientDePayer
 
 """
 class InscriptionForm(forms.Form):

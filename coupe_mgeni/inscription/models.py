@@ -21,6 +21,7 @@ class Equipe(models.Model):
     prenomContact = models.CharField(max_length=100, verbose_name="Prénom du contact")
     emailContact = models.CharField(max_length=100, verbose_name="Courriel du contact")
     telephoneContact = models.CharField(max_length=10, verbose_name="Téléphone du contact")
+    aPayer = models.BooleanField(verbose_name="A payé", default=False)
 
 
 

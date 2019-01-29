@@ -33,9 +33,9 @@ send_email.short_description = "Envoyer un email"
 
 
 class EquipeAdmin(admin.ModelAdmin):
-    list_display   = ('nomEquipe', 'categorie', 'apercu_contact', 'emailContact','telephoneContact')
-    list_filter    = ('categorie',)
-    ordering       = ('categorie', )
+    list_display   = ('nomEquipe', 'categorie', 'apercu_contact', 'emailContact','telephoneContact', 'aPayer')
+    list_filter    = ('categorie', 'aPayer')
+    ordering       = ('categorie', 'aPayer', 'aPayer' )
     search_fields  = ('nomEquipe', 'categorie')
     actions        = [exporter_tableau, send_email]
 
