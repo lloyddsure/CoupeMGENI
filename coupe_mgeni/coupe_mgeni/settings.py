@@ -140,7 +140,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
 EMAIL_HOST = 'smtp.ionos.com'
-EMAIL_HOST_PASSWORD = 'Mgeni4coupe'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'info@coupemgeni.com'
+EMAIL_HOST_USER = ''
 EMAIL_PORT = 587
