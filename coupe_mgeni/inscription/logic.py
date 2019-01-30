@@ -32,7 +32,7 @@ def confirmerInscription(formEquipe):
 
     <div style="height:100px;">
     </div>
-    
+
     <div style="color:#666699;">
         <div style="float: left;width:100%;">______________________________________________</div>
         <h2 style="float: left;width:100%;margin-bottom:0px;">Janick Houle</h2>
@@ -48,6 +48,6 @@ def confirmerInscription(formEquipe):
 
     """.format(nom_equipe=equipe, categorie=categorie)
     #message = """Bonjour, \n vous etes inscrits pour le tournoi avec l'equipe {nom_equipe} dans la categorie {categorie}""".format(nom_equipe=equipe, categorie=categorie)
-    sender = "info@coupemgeni.com"
-    to = formEquipe.cleaned_data['emailContact']
-    utils.mail.envoi_de_mail(subject,message,sender,to)
+    sender = "janick.houle@vi-foot.com"
+    to = [formEquipe.cleaned_data['emailContact'], "shadrack.mmunga@vi-foot.com"]
+    #utils.mail.envoi_de_mail(subject,message,sender,to)
