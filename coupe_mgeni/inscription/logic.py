@@ -50,4 +50,4 @@ def confirmerInscription(formEquipe):
     #message = """Bonjour, \n vous etes inscrits pour le tournoi avec l'equipe {nom_equipe} dans la categorie {categorie}""".format(nom_equipe=equipe, categorie=categorie)
     sender = "janick.houle@vi-foot.com"
     to = [formEquipe.cleaned_data['emailContact'], "shadrack.mmunga@vi-foot.com"]
-    #utils.mail.envoi_de_mail(subject,message,sender,to)
+    utils.mail.envoi_de_mail(subject,message,sender,to)
